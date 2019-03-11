@@ -1,0 +1,206 @@
+\documentclass[draftthesis,tocnosub,noragright,centerchapter,12pt]{uiucecethesis09}
+
+% Use draftthesis for notes and date markings on every page.  Useful when you
+%   have multiple copies floating around.
+% Use offcenter for the extra .5 inch on the left side. Needed with fullpage and fancy.
+% Use mixcasechap for compatibility with hyperref package, which does NOT like all caps default
+% Use edeposit for the adviser/committee on the title page.
+% Use tocnosub to suppress subsection and lower entries in the TOC.
+% PhD candidates use "proquest" for the proquest abstract.
+
+\makeatletter
+
+\usepackage{setspace}
+\usepackage{epsfig}  % for figures
+\usepackage{amsmath}  % for math spacing
+\usepackage{lscape}  % Useful for wide tables or figures.
+\usepackage{longtable}
+\usepackage[nonumberlist, acronym]{glossaries}
+\usepackage{csvsimple}
+\usepackage{longtable}
+\usepackage{booktabs,subcaption,amsfonts,dcolumn}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{placeins}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{siunitx}
+\newcolumntype{d}[1]{D..{#1}}
+\newcommand\mc[1]{\multicolumn{1}{c}{#1}} % handy shortcut macro
+\usepackage[justification=raggedright, singlelinecheck=false, labelfont=bf]{caption}	% makes captions ragged right - thanks to Bryce Lobdell
+\msthesis
+%\phdthesis
+%\otherdoctorate[abbrev]{Title of Degree}
+%\othermasters[abbrev]{Title of Degree}
+
+\newcommand{\DocTitle}{thesis }
+\newcommand{\NoSpaceDocTitle}{thesis}
+
+\title{Validating a Concept Inventory for Cybersecurity}
+\author{Spencer Offenberger}
+\department{Electrical and Computer Engineering}
+\degreeyear{2019}
+
+% Advisor name is required for
+% - doctoral students for the ProQuest abstract
+% - master's students who do not have a master's committee
+\advisor{Professor Michael Loui}
+
+% Uncomment the \committee command for
+% - all doctoral students
+% - master's students who have a master's committee
+%\committee{Professor Firstname Lastname, Chair\\
+%        Professor Firstname Lastname} % etc.
+\makeglossaries
+\setcounter{section}{1}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\newif\iflong
+\longtrue
+\newif\ifshort
+\shortfalse
+
+\makeatother
+\begin{document}
+
+
+
+% Acronym
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COPYRIGHT
+%
+%\copyrightpage
+%\blankpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE
+%
+\maketitle
+
+%\raggedright
+\parindent 1em%
+
+\frontmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABSTRACT
+%
+\begin{abstract}
+% Put the abstract in a file called "abs.tex" and it'll be inputted here.
+\input{tex/abs}
+\end{abstract}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DEDICATION
+%
+\begin{dedication}
+% Whatever dedication you want.
+To my parents, for their love and support.
+\end{dedication}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACKNOWLEDGMENTS
+%
+% Put acknowledgments in a file called "ack.tex" and it'll be inputted here.
+\begin{acknowledgments}
+\input{tex/ack}
+\end{acknowledgments}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLE OF CONTENTS
+%
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{5}}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LIST OF TABLES
+%
+% The List of Tables is not strictly necessary. Omitting the List of Tables will
+% simplify the thesis check and reduce the number of corrections.
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LIST OF FIGURES
+%
+% The List of Figures is not strictly necessary. Omitting the List of Figures will
+% simplify the thesis check and reduce the number of corrections.
+\listoffigures
+
+
+\input{tex/acronyms.tex}
+
+%\printglossary[type=\acronymtype,title=List of Abbreviations,style=long3col]
+\makeatletter
+%\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\mainmatter
+\glsresetall
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\chapter{introduction}
+\input{tex/intro}	% for INTRODUCTION in "intro.tex"
+\section{Motivation}
+\input{tex/motivation}
+
+\chapter{Background}
+\input{tex/background}
+
+%\glsresetall
+\chapter{Methods}
+\input{tex/methods}
+
+%\glsresetall
+\chapter{Results}
+\input{tex/res}
+
+%\glsresetall
+\chapter{Discussion}
+\input{tex/disc}
+
+%\glsresetall
+\chapter{Conclusion}
+\input{tex/concl}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDIX
+%
+
+
+\backmatter
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY
+%
+% Put references in BibTeX format in thesisrefs.bib.
+\bibliographystyle{IEEE_ECE}
+% Put references in BibTeX format in thesisrefs.bib.
+\bibliography{thesisrefs}
+
+\clearpage
+\setcounter{table}{0}
+\renewcommand{\thetable}{A.\arabic{table}}
+\appendix
+\chapter{Appendix A}
+\input{tex/apx1}
+\chapter{Appendix B}
+\input{tex/apx3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AUTHOR'S BIOGRAPHY
+% As of 10/03/2011, Author's Biography or Vita no longer accepted by Grad College
+
+\end{document}
+\endinput
