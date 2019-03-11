@@ -238,8 +238,8 @@
           \hspace*{0.1in}Master's Committee:\\[12pt] %default is 0.2in
          \hspace*{0.53in}\begin{tabular}{l}\@committee\end{tabular}%\vfil} %default is 0.6in
         \else
-        \hspace*{0.1in}Adviser:\\[12pt] %default is 0.2in
-         \hspace*{0.53in}\@advisor%\vfil} %default is 0.6in
+        \hspace*{-0.5in}Adviser:\\[12pt] %default is 0.2in
+         \hspace*{00in}\@advisor%\vfil} %default is 0.6in
         \fi
       \fi}
     \newpage
