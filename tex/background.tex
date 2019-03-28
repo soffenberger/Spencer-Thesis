@@ -1,53 +1,85 @@
-\iflong
+The National Research Council recommends establishing a cognitive framework for the design of an instrument \cite{knowing_what_students_know}. This cognitive framework defines what knowledge of a concept should be assessed and the ways in which students reveal their knowledge, or lack of knowledge, about that topic. Prior work on the \gls{cat} Project has focused on establishing this cognitive framework, providing baseline arguments for the validity of the \gls{cci}.     
+    
+Because a test cannot be universally valid for every population or purpose, we need to define carefully the contexts, populations, and purposes for which the \gls{cci} is valid. We intended the \gls{cci} to measure the cybersecurity conceptual knowledge of students who have completed a first course in cybersecurity. Cybersecurity is taught to an increasingly wide range of stakeholders, including policymakers, computer scientists, medical professionals, and business professionals. Each stakeholder's courses vary in focus and depth. Because of this high variance, we have chosen to optimize the \gls{cci} for the largest population of cybersecurity professionals --- computer scientists. While the \gls{cci} may provide useful insights about the conceptual knowledge of policymakers or others, our goal is to have the instrument provide the most insight about computer science students.   
 
 \section{\gls{cat} Project}
-\input{tex/cat.tex}
 
-\fi
+In accordance with the recommendations of the National Research Council, we based the design of the \gls{cci} on the consensus opinions of a panel of experts and on documented student misconceptions \cite{jcerp, misconceptions, delphi}.
 
-\section{Validity}
+Parekh et al. \cite{delphi} began the \gls{cat} Project development by identifying the core concepts of cybersecurity using a Delphi process. A Delphi process is a rigorous and structured method for creating consensus among experts about potentially contentious issues, such as what subset of concepts should be included on the \gls{cci} \cite{original_delphi}. A Delphi process has been used to identify the cognitive framework of several previous \glspl{cilabel} \cite{dlci}. This process identified five concepts all related to adversarial thinking to include in the \gls{cci} seen in Table \ref{tab:topics} \cite{delphi}. From these concepts, Sherman et al. \cite{scenarios} developed cybersecurity scenarios that require students to understand these concepts. For example, a scenario that covers concept \gls{c} involves a hypothetical government facility where we define defenses and biometric authentication methods. This scenario defines the defenses that allow for questions on potential attacks that could exploit the defenses.     
+     
+\glsreset{c}     
+\glsreset{v}     
+\glsreset{d}     
+\glsreset{g}     
+\glsreset{t}     
+     
+     
+\begin{table}[!h]     
+\centering     
+\caption{Five Core Concepts of Cybersecurity}     
+\scalebox{.75}{     
+\begin{tabular}{c}     
+\toprule     
+  \large{\gls{v}}\\     
+  \large{\gls{c}}\\     
+  \large{\gls{d}}\\     
+  \large{\gls{g}}\\     
+  \large{\gls{t}}\\     
+\bottomrule     
+\end{tabular}     
+}
+\label{tab:topics}     
+\end{table}     
+     
+Using these scenarios, Scheponik et al. \cite{misconceptions} performed think-aloud interviews to discover students' misconceptions and problematic reasoning about cybersecurity \cite{jcerp}. Example forms of problematic reasoning include students' beliefs that encryption protects against most any cybersecurity threat and the belief that cybersecurity threats come only from outside an organization.     
+     
+Using findings from these interviews, we created the \gls{cci} multiple-choice questions, called \emph{items}, using the same scenarios and others developed later. Each \gls{cci} item consists of a scenario, a stem (i.e., a question about the scenario), and five answer choices. We created the wrong answers (distractors) based on the interview findings. By grounding the design of the \gls{cci} in the Delphi process and student interviews, we have established baseline arguments for the validity of the \gls{cci}.  
 
-Validity is the set of arguments and evidence that establish whether and how an assessment tool can be used to measure students' knowledge \cite{douglas_purzer}. The National Research Council recommends establishing a cognitive framework for the design of an assessment tool \cite{knowing_what_students_know}. This cognitive framework defines what knowledge of a topic should be assessed and the ways in which students reveal their knowledge, or lack of knowledge, about that topic. Prior work on the \gls{cat} Project has focused on establishing this cognitive framework, providing baseline arguments for the validity of the \gls{cci}.
-
+In this \NoSpaceDocTitle, we continue the National Research Council's recommended development process. We use a panel of 12 experts to review whether the draft \gls{cci} indeed matches the targeted cognitive framework. Once an instrument is created, it should be administered to its targeted demographic and be statistically evaluated \cite{knowing_what_students_know}. We administered a pilot test of the \gls{cci} to a group of 142 students from six universities to evaluate whether students responded to items on the \gls{cci} according to our expectations from the interviews. We use statistical analysis of student responses to determine what inferences can be validly drawn from administrations of the \gls{cci}.   
 
 
 \section{Classical Test Theory (CTT)}
 
 
-\gls{ctt} is often the first scoring paradigm used to evaluate an instrument because it can be used with smaller sample sizes \cite{og_ctt}. With 142 students in the pilot, \gls{ctt} is more practical than more exhaustive analytics like \gls{irt}. Despite not being as powerful as \gls{irt}, \gls{ctt} allows us to find problematic questions and distractors and suggest modifications with a smaller number of students. This analysis enables more rapid iteration and improvement of the \gls{cilabel}.
+Jorian et al. \cite{jorian} outlined three basic criteria of a valid \gls{cilabel}: \gls{cilabel} indicates overall understanding of the concepts, \gls{cilabel} indicates understanding of a specific concept, \gls{cilabel} indicates misconceptions or student errors. Jorion et al. recommended using a series of statistical tests to demonstrate whether a \gls{cilabel} meets these criteria. \gls{ctt} is often the first evaluation paradigm used to evaluate an instrument because it is useful with smaller sample sizes \cite{og_ctt}. \gls{ctt} is more practical than more exhaustive analytics such as \gls{irt} because \gls{ctt} allows us to find problematic items and distractors and suggest modifications with a smaller number of students. This analysis enables rapid iteration and improvement of the \gls{cilabel}.     
+     
+     
+According to \gls{ctt}, an assessment instrument should minimize error. All of the instrument's items should test a single construct. Each item should be neither too hard nor too easy. Each item should provide a good estimate of the student's overall ability
 
 \section{Reliability}
 
-
-Reliability is a measure of the likelihood that repeated measurements of the same student will yield the same score. If an assessment tool is not reliable, it cannot be valid.
-
-In \gls{ctt}, the core assumption is that a student's \textit{observed score (X)} consists of two hypothetical values: a student's \textit{true score (T)} and some random \textit{error (E)} \cite{og_ctt}. The student's true score would be the score of an infinite number of independent administrations of the test \cite{true_score}.  This model is expressed symbolically as (X = T + E) \cite{dlci}. A reliable instrument minimizes the error so the observed score best reflects the student's understanding. 
-
-The conventional measurement used for internal reliability is Cronbach's $\alpha$, which is ``an estimate of the correlation between two random samples of items from a universe of items like those in the test" \cite{og_cronbach}. We can determine Cronbach's $\alpha$  without taking the instrument multiple times if two conditions are met: (1) the instrument measures a single trait and (2) the item is either correct or incorrect \cite{dlci}. A reliable instrument will lead to $\alpha$ values that are close to 1.  There is no universally acceptable Cronbach value, but 0.8 is considered good and 0.7 is the minimum value considered satisfactory according to Panayiotis \cite{panayiotis} and Jorion et al. \cite{jorian}.
-
-Cronbach's $\alpha$ can also be used to coarsely evaluate the quality of each item. The addition of each item should increase the overall reliability of the instrument\cite{dlci}. By removing an item and then recalculating the $\alpha$ value, we can judge the quality of that specific item. When the removal of an item increases the value of $\alpha$, it is particularly poor and should be removed.
-
-
-The standard error is a function of $\alpha$ and defines a confidence interval for each student's true score. Standard error is calculated using ($SE = S_x \sqrt{1-\alpha}$), where $S_X$ is the standard deviation of the sample and $\alpha$ is the Cronbach's $\alpha$. When the standard error is small, we can be confident that students with different observed scores have different true scores. 
+Reliability is a measure of the likelihood that repeated measurements of the same student will yield the same score. If an instrument is not reliable, it cannot be valid.     
+ 
+In \gls{ctt}, the core assumption is that a student's \textit{observed score (X)} consists of two hypothetical values: a student's \textit{true score (T)} and some random \textit{error (E)} \cite{og_ctt}. If a test is not biased, the student's true score would be the score of an infinite number of independent administrations of the test \cite{true_score}.  This model is expressed symbolically as (X = T + E) \cite{dlci}. A reliable instrument minimizes the error so the observed score best reflects the student's understanding.      
+     
+The conventional measurement used for internal reliability is Cronbach's $\alpha$.  Cronbach's $\alpha$ is ``an estimate of the correlation between two random samples of items from a universe of items like those in the test" \cite{og_cronbach}. We can determine Cronbach's $\alpha$  without administering the \gls{cci} multiple times if two conditions are met. The conditions are: (1) the instrument measures a single construct, (2) the item is either correct or incorrect \cite{dlci}. A reliable instrument will lead to $\alpha$ values that are close to 1.       
+     
+There is no universally acceptable Cronbach value, but 0.8 is considered good and 0.7 is the minimum value considered satisfactory according to Panayiotis \cite{panayiotis} and Jorion et al. \cite{jorian}.     
+     
+Cronbach's $\alpha$ is also used to coarsely evaluate the quality of each item. The addition of each item should increase the overall reliability of the instrument \cite{dlci}. By removing an item and then recalculating the $\alpha$ value, we can judge the quality of that specific item. When the removal of an item increases the value of $\alpha$, the item is particularly poor and should be removed.     
+     
+The standard error is a function of $\alpha$ and defines a confidence interval for each student's true score. We calculate standard error using ($SE = S_x \sqrt{1-\alpha}$) where $S_x$ is the standard deviation of the sample and $\alpha$ is the Cronbach's $\alpha$. When the standard error is small, we can be confident students with different observed scores have different true scores.   
 
 
 \section{Difficulty and Discrimination}
 
-Reliability alone does not indicate that the instrument provides a valid representation of students' knowledge. The validity of the instrument can be further established by looking at each item's difficulty and discrimination. The difficulty of an item is the fraction of students with the correct response \cite{og_ctt}.  Each item of the instrument should have a difficulty in the range of 0.2 to 0.8 \cite{dlci, jorian}. When the difficulty is outside this range, it does not effectively separate students with different levels of understanding. To effectively separate students, a balance of difficulty within the acceptable range is ideal.
+Reliability alone does not indicate the instrument provides a valid representation of student knowledge. The validity of the instrument can be further established by each item's difficulty and discrimination. The difficulty of an item is the fraction of students with the correct response \cite{og_ctt}.  Each item of the instrument should have a balanced range of difficulties falling within 0.2 to 0.8 \cite{dlci, jorian}. When the difficulty is outside this range, it does not effectively separate students of a different understanding.     
+     
+The discrimination of an item is the point-biserial correlation between the item and the overall performance \cite{jorian}. When an item's discrimination is low, weaker students (low total scores) perform similarly to stronger students (high total scores) on that item. A good item will have a discrimination of at least 0.2 \cite{dlci}. \iflong An item with proper discrimination and difficulty will fall within the largest square area as noted by the dotted lines in Figure \ref{fig:ideal}.\fi      
+     
+\iflong     
+\begin{figure}[ht]     
+    \begin{center}     
+    \advance\leftskip-3cm     
+    \advance\rightskip-3cm     
+    \includegraphics[scale=.5]{images/graph.png}     
+    \caption{Validity of Discrimination and Difficulty}     
+    \label{fig:ideal}     
+\end{center}     
+\end{figure}     
+\fi     
 
-The discrimination of an item is the point-biserial correlation between the item and the overall performance \cite{jorian}. An item with low discrimination has weaker students (low total scores) performing similarly to stronger students (high total scores) on that item. A good item will have a discrimination of at least 0.2 \cite{dlci}. \iflong An item with proper discrimination and difficulty will fall within the largest square area as noted by the dotted lines in Figure \ref{fig:ideal}.\fi 
-
-\iflong
-\begin{figure}[ht]
-    \begin{center}
-    \advance\leftskip-3cm
-    \advance\rightskip-3cm
-    \includegraphics[scale=.5]{images/graph.png}
-    \caption{Validity of Discrimination and Difficulty}
-    \label{fig:ideal}
-\end{center}
-\end{figure}
-\fi
 
 \iflong
 \section{Distractor Analysis}
@@ -57,16 +89,8 @@ The discrimination of an item is the point-biserial correlation between the item
 \fi
 
 
-Distractor analysis can be used to analyze an item whose inclusion does not improve $\alpha$ or whose difficulty and discrimination fall outside the accepted range. To analyze distractors we split the students into tertiles (thirds) according to total scores. After splitting the students, take the proportion of test takers selecting each response \cite{og_ctt}. There are certain trends we expect to see: (1) The percentage of students selecting the correct answer should increase from the bottom third to the top third. (2) The item's difficulty for the top third of students should be near the upper range of accepted difficulty. (3) Each distractor is expected to have a negative discrimination value \cite{distractor}. A distractor's discrimination value is calculated by setting it as the correct answer and re-grading the student's responses. A distractor with a negative discrimination is selected more by weaker students. %If these trends do not appear the distractor may be the issue.
-
-\section{Concept Subgroups}
-
-Cronbach's $\alpha$ can be applied to a group of items called a \textit{subgroup}. In our case, the subgroup consists of the five items designed to cover the same concept. These subgroups can be evaluated separately to assess reliability to determine whether these subgroups can be tested individually. Ideally, the concept should have a reliability similar to the overall instrument. In practice, having a similar reliability to the entire instrument is difficult because each subgroup has fewer items. 
-
-
-\iflong
-
-\section{Previous Work}
-\input{tex/prev_work.tex}
-
-\fi
+Distractor analysis is used to analyze items in which their inclusion does not improve $\alpha$ or has a difficulty and discrimination outside the accepted range. To analyze distractors we split the students into tertiles (thirds) according to total scores. After splitting the students, we take the proportion of students selecting each response \cite{og_ctt}. There are certain trends we expect to see: (1) the percentage of students selecting the correct answer should increase from the bottom third to the top third, (2) the item's difficulty for the top third of students should be near 0.8, (3) each distractor should have a negative discrimination value \cite{distractor}. The discrimination value of a distractor is the discrimination when the distractor is considered to be the correct answer. The discrimination value of the correct answer is the same as the discrimination of the item.
+     
+\section{Concept Subtests}     
+     
+Cronbach's $\alpha$ can be applied to a group of items called a \textit{subtest}. In our case, we propose that there may be 5 subtests in the \gls{cci}, each aligning with the five concepts identified in the Delphi process and each consists of five items designed to cover those concepts. We evaluate these subtests separately to assess reliability to determine whether we can interpret understanding of the concepts from these subtests alone. Ideally, each subtest should have a reliability similar to the overall instrument. In practice, having a similar reliability to the entire instrument is difficult because each subtest has fewer items.

@@ -1,26 +1,25 @@
-%\textbf{Subject: Results contain expert panel and pilot study.}
-
-%The intention of this \DocTitle  is to evaluate the current \gls{cci}. The evaluation of the \gls{cci} involved two stages, expert panel review and pilot testing with students. The expert panel was given to 12 experts each from a different institution. The experts provided comments and reviews to improve the final instrument. After the expert panel, the pilot instrument was taken by 142 students from 6 institutions. By using multiple institutions, the study encompasses a good sample that covers different courses and teaching styles.
-
-In this chapter, we present results from the expert review of the \gls{cci} and our psychometric analysis of students' responses to the \gls{cci}. To help the reader interpret our findings, we compare our results with three \glspl{cilabel} evaluated with the same techniques. These \glspl{cilabel} are the Concept Assessment Tool for Statics (27 questions and 1,372 students), the Statistics Concept Inventory (38 questions and 402 students), and the Dynamics Concept Inventory (29 questions and 5,966 students) \cite{jorian}. We chose these \glspl{cilabel} because they are the few technical \glspl{cilabel} that have been analyzed using similar techniques.
-
-
-%\textbf{Subject: Describe what the goal of the results.}
-
-%To evaluate the pilot study we used conventional psychometrics associated with \gls{ctt}. These techniques include difficulty and discrimination to assess the quality of individual items. Cronbach's $\alpha$ to assess both the reliability of the instrument and the quality of specific items. \iflong \gls{efa} to evaluate the correlation of items in the same concepts. \fi 
-
-
+In this chapter, we present results from the expert review of the \gls{cci} and our psychometric analysis of students' responses to the \gls{cci}. To help the reader interpret our findings, we compare our results with three \glspl{cilabel} evaluated with the same techniques. These \glspl{cilabel} are the Concept Assessment Tool for Statics (27 questions and 1,372 students), the Statistics Concept Inventory (38 questions and 402 students), and the Dynamics Concept Inventory (29 questions and 5,966 students) \cite{jorian}. We chose these \glspl{cilabel} because they are the few technical \glspl{cilabel} that analyzed the \glspl{cilabel} using similar techniques. 
 
 \section{Expert Panel}
 
-The expert panel consisted of 12 experts in cybersecurity or a related field. These experts reviewed each of the individual items and rated them on a scale of Accept, Accept with Minor Revisions, Accept with Major Revisions, and Reject. The results of this review process can be seen in Figure \ref{fig:accept_rej}. This figure includes the items in the current assessment although a total of 32 items were reviewed. The items selected for the \gls{cci} were reviewed positively receiving a vast majority of Accept and Accept with Minor Revisions. Of the questions that received rejects, they received helpful comments to address the source of the rejection. These results provide evidence for the validity of the chosen items in the \gls{cci}.
+
+The expert panel consisted of 12 experts in cybersecurity or a related field. These experts reviewed each of the individual items and rated them on a scale of Accept, Accept with Minor Revisions, Accept with Major Revisions, and Reject. The results of this review process can be seen in Figure \ref{fig:accept_rej}. Although 32 items were reviewed, the figure presents the results for the 24 items in the current CCI. The items selected for the \gls{cci} were reviewed positively receiving a vast majority of Accept and Accept with Minor Revisions.
+
+Additionally, experts left comments for each item which we used to revise the items that received Reject ratings. As an example, we show how we used expert reviews to revise item Q4. Q4 covered a potential SQL injection vulnerability and the means of defending against it. The initial wording of the Q4 scenario is below.
+
+\begin{quotation}
+\noindent{\textbf{Scenario A3} When a user Mike O'Brien registered a new account for an online shopping site, he was required to provide his username, address, first and last name, and a password. Immediately after Mike submitted his request, you -- as the security engineer -- receive a database input error message in the logs.}
+\end{quotation}
+
+
+Experts commented that this the wording is imprecise because an error in the logs is not ``received" but rather written into the log on the server. The word ``received" implies the error was noticeable and could lead students to infer that the error came from the client-side. The item was modified to replace ``receive a database input error" to ``observe a database input error." The change makes it clear that the user input did not cause an alert and that the message was logged on the server-side. The clarification will lead students away from client-side solutions such as ``more thoroughly test the software before deploying it" and toward server-side solutions such as the correct response, ``sanitize input at the server side." The expert review process strengthened the clarity which is critical to measuring a student's conceptual knowledge.
 
 \iflong
 \begin{figure}[!htbp]
     \begin{center}
     \advance\leftskip-3cm
     \advance\rightskip-3cm
-    \includegraphics[scale=.5]{images/bar.png}
+    \includegraphics[scale=.4]{images/bar.png}
     \caption{Expert Response to Items}
     \label{fig:accept_rej}
 \end{center}
@@ -42,11 +41,28 @@ The expert panel consisted of 12 experts in cybersecurity or a related field. Th
 \FloatBarrier
 \section{Reliability and Standard Error}
 
-Cronbach's $\alpha$ is a measure of the reliability of the instrument. Jorion et al. \cite{jorian} describe anything above 0.8 as good and Panayides \cite{panayiotis} describes 0.7 as the minimum. The reliability of the \gls{cci} in this pilot test is 0.78 which is close to Jorion et al.'s recommendation for good reliability and above Panayides' minimum recommendation. The reliability of the \gls{cci} is strong when compared to other \glspl{cilabel}. The Concept Assessment Tool for Statics, the Statistics Concept Inventory, and the Dynamics Concept Inventory had $\alpha$ values of 0.84, 0.64, and 0.74 respectively \cite{jorian}. The reliability of the \gls{cci} suggests that it is sufficiently reliable to be a valid \gls{cilabel}.
+Cronbach's $\alpha$ is a measure of the reliability of the instrument. The Cronbach's $\alpha$ of the \gls{cci} in this pilot test is 0.78 which is close to Jorian et al's recommendation for good reliability of 0.80 and above Panayiotis's minimum recommendation of 0.70. The reliability of the \gls{cci} is similar to other \glspl{cilabel} as seen in Table \ref{tab:compare}. The reliability of the \gls{cci} suggests that it is sufficiently reliable to be a valid \gls{cilabel}.   
 
-The standard error of measurement defines a confidence interval for each student's true score. The standard measurement error of the \gls{cci} was 2.13 for this pilot test. A 2.13 standard error implies the 68\% confidence interval for a student’s true score. Given that a mean observed score of 9 points (approximating mean of 8.610) is from 6.87 to 11.13, students with total scores anywhere between 7 and 11 have a 68\% confidence that students have different true scores. 
 
-%The Concept Assessment Tool for Statics, the Statistics Concept Inventory, and the Dynamics Concept Inventory had standard error of measurement values of 2.02, 2.21, 2.02 respectively \cite{jorian}. The \gls{cci} performs well compared to these studies, which is expected given the $\alpha$ values.
+The standard error of measurement defines a confidence interval for each student's true score. The standard measurement error of the \gls{cci} was 2.13 for this pilot test. A 2.13 standard error implies the 68\% confidence interval for a student’s true score, given that a mean observed score of 8.61 points is from 6.48 to 10.74. 
+
+\FloatBarrier
+
+\begin{table*}[!htbp]   
+\caption{Comparison With Other Instruments: Concept Assessment Tool for Statics, Statistics Concept Inventory, Dynamics Concept Inventory \cite{jorian}}   
+\centering   
+\begin{tabular}[width=\textwidth]{ccccc}   
+    \toprule
+    \textbf{Measurement} & \textbf{\gls{cci}} & \textbf{Statics} & \textbf{Statistics} & \textbf{Dynamics} \\
+    \textit{Cronbach's $\alpha$} & 0.78 & 0.84 & 0.64 & 0.74\\   
+    \textit{Minimum Difficulty Value} & 0.10 & 0.16 & 0.03 & 0.06 \\   
+    \textit{Maximum Difficulty Value} & 0.66 & 0.78 & 0.87 & 0.91 \\   
+    \textit{Minimum Discrimination Value} & 0.16 & 0.18 & -0.13 & 0.01\\
+    \textit{Maximum Discrimination Value} & 0.47 & 0.65 & -0.57 & 0.56\\   
+    \bottomrule   
+\end{tabular}   
+\label{tab:compare}   
+\end{table*}  
 
 \begin{table}[!htbp]
 \caption{Instrument Statistics}
@@ -63,7 +79,7 @@ The standard error of measurement defines a confidence interval for each student
 \end{table}
 
 
-Cronbach's $\alpha$ can be used as a coarse evaluation of the quality of an item. Each item should increase the quality of the instrument, and excluding that item should decrease the overall reliability. Table \ref{tab:table_cronbach_exclusion} shows the results of the Cronbach calculation with each item excluded. Ideally, every item would be below the original Cronbach $\alpha$ indicating that each item increases the overall reliability. There are no items that decrease the overall reliability and consequently need to be removed.
+Cronbach's $\alpha$ can be used as a coarse evaluation of the quality of an item. Each item should increase the quality of the instrument, and excluding that item should decrease the overall reliability. Table \ref{tab:table_cronbach_exclusion} shows the results of the Cronbach calculation with each item excluded. Ideally, every item would be below the original Cronbach $\alpha$ indicating that each item increases the overall reliability. There are no items that decrease the overall reliability and consequently need to be removed for this reason.
 
 \iffalse
 \iflong
@@ -83,9 +99,9 @@ Cronbach's $\alpha$ can be used as a coarse evaluation of the quality of an item
 \FloatBarrier
 \section{Difficulty and Discrimination}
 
-Difficulty is the fraction of students with the correct response. If an item is too hard, the item is separating only strong students from strong students. If an item is too easy, it cannot differentiate any students. The acceptable range of difficulty is between 0.2 and 0.8 percent. The difficulty of each item can be seen in Figure \ref{fig:dif_disc} and Table \ref{tab:diff_v_discrimination}. The range of difficulty is 0.1 to 0.66. The Concept Assessment Tool for Statics, the Statistics Concept Inventory, and the Dynamics Concept Inventory had difficulty ranges of 0.16 to 0.78, 0.03 to 0.87 and 0.06 to 0.91 respectively. The instrument overall is too difficult as evidenced by 21 out of 25 items having difficulty below 0.5 and 5 items falling outside the minimum acceptable difficulty. 
+The difficulty of an item is the fraction of students with the correct response. If an item is too hard, the item is separating only strong students from strong students. If an item is too easy, it cannot differentiate any students. The acceptable range of difficulty is between 0.20 and 0.80. The difficulty of each item can be seen in Figure \ref{fig:dif_disc} and Table \ref{tab:diff_v_discrimination}. The range of difficulty for the \gls{cci} is 0.10 to 0.66. When compared to the other instruments the \gls{cci} seen in Table \ref{tab:compare} it is too difficult and will have less discriminatory power. The \gls{cci} instrument overall is too difficult as evidenced by 21 out of 25 items having difficulty below 0.50 and 5 items falling outside the minimum acceptable difficulty. 
 
-The discrimination indicates the amount of information an item gives about the overall performance of the student. High discrimination indicates that a student's performance on a given item is highly correlated to overall performance. The acceptable range of discrimination is anything above 0.2. Discrimination can be seen in Figure \ref{fig:dif_disc}. The range of discrimination if 0.16 to 0.47. The Concept Assessment Tool for Statics, the Statistics Concept Inventory, and the Dynamics Concept Inventory had discrimination ranges of 0.18 to 0.65, -0.13 to 0.57 and 0.01 to 0.56 respectively. Those \glspl{cilabel} had 1, 10, and 5 items fall below the 0.2 minimum values compared to the \gls{cci} with 3 items that fall below 0.2. The discrimination range is not as high as other \glspl{cilabel}, but the bottom of the range is good when compared to other \glspl{cilabel}.
+The discrimination of an item indicates the amount of information an item gives about the overall performance of the student. High discrimination indicates that a student's performance on a given item is highly correlated to overall performance. The acceptable range of discrimination is anything above 0.20.  Figure \ref{fig:dif_disc} shows the discrimination of each item. The range of discrimination is 0.16 to 0.47. The discrimination range is not as high as other \glspl{cilabel} seen in Table \ref{tab:compare}, but the bottom of the range is much higher than the Statistics Concept Inventory and Dynamics Concept Inventory. The other \glspl{cilabel} had one, ten, and five items fall below the 0.20, while the \gls{cci} had three items below 0.20. Most of the items being above the minimum value is encouraging indicator the assessment is valid.   
 
 \iffalse
 \iflong
@@ -121,7 +137,7 @@ The correlation coefficient can be calculated for each item to quantify how simi
     \textit{Q7} & 0.30 & 0.66 & \textit{Q20} & 0.22 & 0.14 \\
     \textit{Q8} & 0.21 & 0.19 & \textit{Q21} & 0.23 & 0.44 \\
     \textit{Q9} & 0.33 & 0.61 & \textit{Q22} & 0.47 & 0.34 \\
-    \textit{Q10} & 0.19 & 0.4 & \textit{Q23} & 0.38 & 0.49 \\
+    \textit{Q10} & 0.19 & 0.40 & \textit{Q23} & 0.38 & 0.49 \\
     \textit{Q11} & 0.34 & 0.36 & \textit{Q24} & 0.30 & 0.40 \\
     \textit{Q12} & 0.36 & 0.24 & \textit{Q25} & 0.24 & 0.14 \\
     \textit{Q13} & 0.21 & 0.28 & \textit{} &  &\\
@@ -138,7 +154,7 @@ The correlation coefficient can be calculated for each item to quantify how simi
     \begin{center}
     \advance\leftskip-.25cm
     \advance\rightskip-.25cm
-    \includegraphics[scale=.45]{images/diff_v_discrimination_full.png}
+    \includegraphics[scale=.45]{images/new_graph.png}
     \caption{Difficulty vs. Discrimination}
     \label{fig:dif_disc}
 \end{center}
@@ -148,7 +164,7 @@ The correlation coefficient can be calculated for each item to quantify how simi
 
 \FloatBarrier
 \section{Concept Subtests}
-The \gls{cci} consists of five concepts: \gls{v}, \gls{c}, \gls{d}, \gls{g}, and \gls{t}. Each item assesses one of these concepts. The individual items within a concept can be grouped and the Cronbach's $\alpha$ calculated to evaluate the reliability of that concept subtest. The $\alpha$'s of the concept subtests are seen in Table \ref{tab:alpha_concept}. When evaluating the concepts, it is notable that all of the values are significantly less than 0.7 which is considered the minimal acceptable value for a reliable assessment \cite{panayiotis}. These findings suggest that it is not recommended to use the subtests as evaluations of students' knowledge of the specific concepts. 
+The \gls{cci} consists of five concepts: \gls{v}, \gls{c}, \gls{d}, \gls{g}, and \gls{t}. Each item assesses one of these concepts. The individual items within a concept can be grouped and the Cronbach's $\alpha$ calculated to evaluate the reliability of that concept subtest. The $\alpha$'s of the concept subtests are seen in Table \ref{tab:alpha_concept}. When evaluating the concepts, it is notable that all of the values are significantly less than 0.70 which is considered the minimum acceptable value for a reliable instrument \cite{panayiotis}. These findings suggest that the subtests should not be used as evaluations of students' knowledge of the specific concepts. 
 
 %Specifically, \gls{v} has a poor $\alpha$ of 0.236 indicating that the evaluation of that concept through this \gls{cci} is not practical. 
 
@@ -174,11 +190,11 @@ The \gls{cci} consists of five concepts: \gls{v}, \gls{c}, \gls{d}, \gls{g}, and
 
 \iflong
 
-The correlation between items in the subtests can be expressed with a correlation matrix. The correlation matrix is the correlation coefficient of each item with every other item. A heat map of the correlation matrix can be seen in Figure \ref{fig:alignment}. The square regions are all items in a specific concept subtest. Items within the same concept subtest should be expected to correlate  more strongly with each other than with items outside their subtest. We do not see these types of stronger and weaker correlations, confirming that the concept subtests cannot be used as standalone assessments.
+The correlation between items in the subtests can be expressed with a correlation matrix. The correlation matrix is the correlation coefficient of each item with every other item. A heat map of the correlation matrix can be seen in Figure \ref{fig:alignment}. The square regions enclose the items in a specific concept subtest. Items within the same concept subtest should be expected to correlate strongly with each other compared to items outside their subtest. We do not see these types of stronger and weaker correlations. 
 
 \begin{figure}[!hbp]
     \centering
-    \includegraphics[scale=.35]{images/heat_map_top_quarter.png}
+    \includegraphics[scale=1.4]{images/heat_map_top_quarter.png}
     \begin{minipage}{0.65\linewidth}
     \tiny
     \emph{
@@ -194,67 +210,16 @@ The correlation between items in the subtests can be expressed with a correlatio
 \end{figure}
 \fi
 
-\iffalse
-%Remove \gls{efa}. If there is strong evidence from \gls{ctt} that it is a unidimensional test there is no need for an \gls{efa}.
-%\gls{efa} is a factor analysis that attempts to determine whether the multiple domain concepts are related. We used oblique rotation which assumes an underlying assumption that the factors are correlated. Rather than use it as a heuristic we used five factors because this is the number of concepts designed. This analysis seen in Table \ref{tab:efa}. The ideal result would be clear factors that divide the questions into the corresponding concepts. The squares attempt to cluster the factors by the concepts. However, this is not possible  the items within the same concept not sharing obvious factors. 
-
-
-%\begin{table}[!htbp]
-%\caption{Exploratory Factor Analysis}
-%\centering
-%\scalebox{.8}{
-%\begin{tabular}{llllll}
-%\toprule
-%Item & V & G & T & C & D \\
-%\midrule
-%\\\cline{2-2}
-%\textit{Q1} & \multicolumn{1}{|c|}{0.29} &  &  &  &  \\
-%\textit{Q3} & \multicolumn{1}{|c|}{} &  & 0.31 &  &  \\
-%\textit{Q11} & \multicolumn{1}{|c|}{0.55} &  &  &  &  \\
-%\textit{Q17} & \multicolumn{1}{|c|}{} & 0.28 &  &  &  \\
-%\textit{Q21} & \multicolumn{1}{|c|}{0.21} &  &  &  &  \\\cline{2-2}  \cline{3-3}
-%\textit{Q8} &  & \multicolumn{1}{|c|}{0.56} &  &  &  \\
-%\textit{Q9} &  & \multicolumn{1}{|c|}{0.24} &  &  &  \\
-%\textit{Q10} & 0.36 & \multicolumn{1}{|c|}{}  &  &  &  \\
-%\textit{Q22} & 0.55 & \multicolumn{1}{|c|}{}  &  &  &  \\
-%\textit{Q25} &  & \multicolumn{1}{|c|}{}  & 0.55 &  &  \\\cline{3-3}\cline{4-4}
-%\textit{Q7} &  & 0.3 & \multicolumn{1}{|c|}{} &  &  \\
-%\textit{Q12} &  & & \multicolumn{1}{|c|}{0.47} &  &  \\
-%\textit{Q15} &  & 0.25 & \multicolumn{1}{|c|}{} &  &  \\
-%\textit{Q16} &  &  & \multicolumn{1}{|c|}{} &  & 0.54 \\
-%\textit{Q20} &  &  & \multicolumn{1}{|c|}{0.58} &  &  \\\cline{4-4}\cline{5-5}
-%\textit{Q2} &  &  &  & \multicolumn{1}{|c|}{0.36} &  \\
-%\textit{Q5} &  &  &  & \multicolumn{1}{|c|}{0.5} &  \\
-%\textit{Q14} &  &  &  & \multicolumn{1}{|c|}{0.24} &  \\
-%\textit{Q18} &  & 0.6 &  & \multicolumn{1}{|c|}{} &  \\
-%\textit{Q24} & &  &  & \multicolumn{1}{|c|}{0.23} &  \\\cline{5-5} \cline{6-6}
-%\textit{Q4} & 0.3 &  &  &  & \multicolumn{1}{|c|}{} \\
-%\textit{Q6} &  &  &  & 0.57 & \multicolumn{1}{|c|}{} \\
-%\textit{Q13} & 0.49 &  &  &  & \multicolumn{1}{|c|}{} \\
-%\textit{Q19} & 0.22 &  &  &  & \multicolumn{1}{|c|}{} \\
-%\textit{Q23} & &  &  & 0.37 & \multicolumn{1}{|c|}{} \\\cline{6-6}
-%\bottomrule
-%\end{tabular}
-%}
-%
-%\label{tab:efa}
-%\end{table}
-
-\fi
-
-
-
 \FloatBarrier
 \section{Deeper Analysis of Specific Items}
 
-The psychometric analysis of the \gls{cci} revealed that the assessment has too many difficult items. To inform future revisions of the \gls{cci}, we are analyzing the distractor distribution and distractor discrimination to understand why some items are so difficult. We present an example of this for one of these items, Q15, which had a low difficulty of 0.10 and a relatively low discrimination of 0.25 in the pilot trial. We compare Q15 to a stronger item, Q4, which had a good difficulty of 0.52 and a discrimination of 0.46 in the pilot trial. 
+The psychometric analysis of the \gls{cci} revealed that the instrument has too many difficult items. To inform future revisions of the \gls{cci}, we are analyzing the distractor distribution and distractor discrimination to understand why some items are so difficult. We present an example of this for one of these items, Q15, which had a low difficulty of 0.10 and relatively low discrimination of 0.25 in the pilot trial. We compare Q15 to a stronger item, Q4, which had a good difficulty of 0.52 and discrimination of 0.46 in the pilot trial. 
 
-The distractor analysis shows the proportion of the students' responses in each tertile. The distractor analysis for both Q15 and Q4 can be seen in Table \ref{tab:table_distract}. In Q4, which has a good distribution, the percentage of students getting the correct answer increases from the bottom tertile to the top, and the top tertile generally answers the question correctly. For Q15, although the percentage of students selecting the correct answer increases from the bottom tertile to the top, there is little difference between the top and middle tertiles. Additionally, the top-tertile students only get the correct answer 18\% of the time and instead select distractor A 59\% of the time. The preference for option A among the top tertile is causing the item to be too difficult.
+The distractor analysis shows the proportion of the students' responses in each tertile. The distractor analysis for both Q15 and Q4 can be seen in Table \ref{tab:table_distract}. In Q4, which has a good distribution, the percentage of students getting the correct answer increases from the bottom tertile to the top, and the top tertile generally answers the question correctly. For Q15, although the percentage of students selecting the correct answer increases from the bottom tertile to the top, there is little difference between the top and middle tertiles. Additionally, the top-tertile students answer Q15 correctly 18\% of the time and instead select distractor A 59\% of the time. The preference for option A among the top tertile is causing the item to be too difficult.
 
 \input{tex/distribution_table.tex}
 
-\FloatBarrier
  
- Table \ref{tab:table_distract_discrim} shows the discrimination of each distractor for both Q4 and Q15. We expect the distractors to have negative discrimination values. Q4 has negative or zero values for each distractor as well as a large positive discrimination for the correct answer. Q15 does have a large positive discrimination for the correct answer and is even above the minimum acceptable value, but distractor A has a larger, positive discrimination value. This analysis reveals that for some reason the correct answer is not compelling to the strongest students, suggesting that the wording or structure of the answer choices may be to blame. We explore this assertion more in the future work.
+ Table \ref{tab:table_distract_discrim} shows the distractor discrimination value for both Q4 and Q15. We expect the distractors to have negative discrimination values. Q4 has negative or zero distractor discrimination values for each distractor as well as a large positive discrimination value for the correct answer. Q15 does have a large positive discrimination for the correct answer and is even above the minimum acceptable value, but distractor A has a larger, positive discrimination value. This analysis reveals that for some reason the correct answer is not compelling to the strongest students, suggesting that the wording or structure of the answer choices may be to blame. We explore this assertion more in future work.
 
 \input{tex/discrimination_distractor.tex}

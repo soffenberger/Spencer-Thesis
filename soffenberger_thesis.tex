@@ -15,6 +15,7 @@
 \usepackage{amsmath}  % for math spacing
 \usepackage{lscape}  % Useful for wide tables or figures.
 \usepackage{longtable}
+\usepackage[noadjust]{cite}
 \usepackage[nonumberlist, acronym]{glossaries}
 \usepackage{csvsimple}
 \usepackage{longtable}
@@ -51,7 +52,7 @@
 % - master's students who have a master's committee
 %\committee{Professor Firstname Lastname, Chair\\
 %        Professor Firstname Lastname} % etc.
-\makeglossaries
+%\makeglossaries
 \setcounter{section}{1}
 \setcounter{tocdepth}{1}
 \setcounter{secnumdepth}{4}
@@ -148,8 +149,7 @@ To my parents, for their love and support.
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 \chapter{introduction}
 \input{tex/intro}	% for INTRODUCTION in "intro.tex"
-\section{Motivation}
-\input{tex/motivation}
+
 
 \chapter{Background}
 \input{tex/background}
@@ -193,9 +193,9 @@ To my parents, for their love and support.
 \setcounter{table}{0}
 \renewcommand{\thetable}{A.\arabic{table}}
 \appendix
-\chapter{Appendix A}
+\chapter{Appendix A Item Details}
 \input{tex/apx1}
-\chapter{Appendix B}
+\chapter{Appendix B Full Assessment}
 \input{tex/apx3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
